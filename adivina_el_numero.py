@@ -1,4 +1,4 @@
-lista = """"
+opciones = """"
 Bienvenido al juego de adivinar el número, escoja un nivel de dificultad:
 
 1) Simple (0,100)
@@ -8,7 +8,7 @@ Bienvenido al juego de adivinar el número, escoja un nivel de dificultad:
 """""
 def juego():
 
-    print (lista)
+    print (opciones)
 
     opcion = input("Eliga una de las cuatro opciones: ")
     print(opcion)
@@ -43,11 +43,15 @@ def adivina(minimo,maximo,numero):
             pista+=1
             if pista == 6:
                 ayuda(minimo,maximo,numero)
+            elif pista == 8:
+                max()
         elif intento > numero:
             print("Es demasiado grande.")
             pista+=1
             if pista == 6:
                 ayuda(minimo,maximo,numero)
+            elif pista == 8:
+                max()
         elif intento == numero:
             print("Felicidades, has acertado.")
         else:
@@ -65,5 +69,18 @@ def ayuda(minimo,maximo,numero):
     else:
         return ayuda()
 
+def max():
+    print("Número tope de intentos.")
 
+def victoria(pista):
+    print("Has ganado en", pista, "intentos.")
+    Nombre = input("Ingrese su nombre: ")
+    pregunta2 = input(Nombre, ", ¿Desea volver a jugar?")
+    print(pregunta2)
+    if pregunta2 == "si":
+        lista=[]
+        lista.append(Nombre)
+        print (lista)
+    else:
+        print("Gracias por jugar")
 juego()
