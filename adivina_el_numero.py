@@ -66,5 +66,4 @@ def ayuda(minimo,maximo,numero):
         return ayuda()
 
 
-
 juego()
